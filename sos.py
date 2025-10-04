@@ -77,10 +77,13 @@ for i in range(count):
 
     ga = gen_ga_cookie()
     ga_suffix, ga_value = gen_ga_dynamic()
+    now_ms = int(time.time() * 1000)
     cookie_header = "; ".join([
         "NEXT_LOCALE=fa",
         ga,
-        f"_ga_{ga_suffix}={ga_value}"
+        f"_ga_{ga_suffix}={ga_value}",
+        f"munich_sign_count=1",
+        f"munich_last_sign={now_ms}"
     ])
     headers["cookie"] = cookie_header
 
@@ -97,5 +100,3 @@ for i in range(count):
         resp.close()
     except Exception as e:
         print(f"{i+1}/{count} -> error: {e}")
-
-    time.sleep(random.uniform(0.05, 0.18))
