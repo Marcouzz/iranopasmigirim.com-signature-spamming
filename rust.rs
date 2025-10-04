@@ -2,7 +2,6 @@ use rand::Rng;
 use reqwest::header::{HeaderMap, HeaderValue};
 use serde_json::json;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use std::thread::sleep;
 use uuid::Uuid;
 use std::io::{self, Write};
 use rand::seq::SliceRandom;
@@ -127,3 +126,17 @@ async fn main() {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
